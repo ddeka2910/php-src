@@ -5,8 +5,8 @@ dist: bionic
 language: c
 os: linux
 addons:
-     apt:
-      packages:
+  apt:
+    packages:
       - locales
       - language-pack-de
       - re2c
@@ -44,8 +44,8 @@ notifications:
     email:
        on_failure: change
     irc:
-      #template:
-      #  - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} -  Change view : %{compare_url} - Build details : %{build_url}"
+      template:
+        - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} -  Change view : %{compare_url} - Build details : %{build_url}"
       channels:
         - "irc.efnet.org#php.pecl"
       on_success: change
@@ -80,14 +80,7 @@ jobs:
         - env: ENABLE_ZTS=1 ENABLE_DEBUG=1 SKIP_IO_CAPTURE_TESTS=1 S390X=1
           arch: s390x
           if: type = cron
-        #powerjobs
-        - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
-          arch: ppc64le
-          #if: type = cron
-        - env: ENABLE_ZTS=1 ENABLE_DEBUG=1
-          arch: ppc64le
-          #if: type = cron
-        
+
 before_script:
     - ccache --version
     - ccache --zero-stats
