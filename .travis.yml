@@ -5,8 +5,8 @@ dist: bionic
 language: c
 os: linux
 addons:
-  apt:
-    packages:
+    apt:
+     packages:
       - locales
       - language-pack-de
       - re2c
