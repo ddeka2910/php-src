@@ -81,11 +81,11 @@ jobs:
           arch: s390x
           if: type = cron
         #powerjobs
-        #- env: ENABLE_ZTS=0 ENABLE_DEBUG=0
-        #  arch: ppc64le
+        - env: ENABLE_ZTS=0 ENABLE_DEBUG=0
+          arch: ppc64le
           #if: type = cron
-        #- env: ENABLE_ZTS=1 ENABLE_DEBUG=1
-        #  arch: ppc64le
+        - env: ENABLE_ZTS=1 ENABLE_DEBUG=1
+          arch: ppc64le
           #if: type = cron
         
 before_script:
